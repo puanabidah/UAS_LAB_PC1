@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UAS LAB PC1</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="title">UAS LAB PC1</h1>
+		<div class="wrapper">
+			<div class="preview-img">
+				<canvas id='canvas1'></canvas>
+				<canvas id='canvas2'></canvas>
+            </div>
+			<div class="editor-panel">
+				<div class="firstbtn">
+					<button id='read'>READ IMAGE</button>
+					<button id='ori'>ORIGINAL IMAGE</button>
+				</div>
+				<div class="secondbtn">
+					<button id="no1">1</button>
+					<button id="no2">2</button>
+					<button id="no3">3</button>
+					<button id="no4">4</button>
+				</div>
+				<div class="line">
+					<hr>
+				</div>
+				<div class="groupName">
+					<p>Anggota Kelompok :</p>
+					<ul>
+						<li>TM Rezha Taufiqurrahman (201401019)</li>
+						<li>Puan Abidah Nitisara (201401009)</li>
+						<li>Belintawati Zelda Br Ginting (201401003)</li>
+						<li>Ayu Wulandari (201401021)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script src='pc.js'></script>
+<script>
+	var canvas = document.getElementById('canvas1')
+	var obj = new pc(canvas)
+	obj.image2canvas("logo_usu.png")
+	var canvas2 = document.getElementById('canvas2')
+	var obj2 = new pc(canvas2)
+	obj2.blank2canvas(200, 200)
+	var tes = new Array()
+
+	document.getElementById('read').addEventListener('click', function () {
+		tes = obj.image2read()
+	})
+
+	document.getElementById('ori').addEventListener('click', function () {
+		obj.image2original()
+	})
+
+
+</script>
+</html>
